@@ -1,13 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
 
 :root {
+  /* Primary Colors */
   --white: #ffffff;
-  --clr-prim1: hsl(225, 100%, 94%);
-  --clr-prim2: hsl(245, 75%, 52%);
-  --clr-prim2-sh: hsla(245, 75%, 52%, 0.2);
-  --clr-neut1: hsl(225, 100%, 98%);
-  --clr-neut2: hsl(224, 23%, 55%);
-  --clr-neut3: hsl(223, 47%, 23%);
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+
+  /* Neutral Colors */
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+
+  --hover-blue: hsl(245, 65%, 65%);
 }
 
 * {
@@ -22,8 +26,7 @@ body {
   overflow-x: hidden;
   background-repeat: no-repeat;
   background-size: 100%;
-  background-color: var(--clr-prim1);
-  
+  background-color: var(--pale-blue);
 }
 
 @media (min-width: 400px) {
@@ -50,18 +53,117 @@ main {
 .card {
   background-color: var(--white);
   border-radius: 1rem;
+  max-width: 85%;
+  width: 400px;
 }
 
 .header img{
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
   height: auto;
+  width: 100%;
   max-width: 100%;
   vertical-align: middle;
+  border-radius: 1rem 1rem 0 0;
 }
 
+.content, .footer {
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+}
 
+h1 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--desaturated-blue);
+  text-align: center;
+}
+
+.annual-plan {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  background-color: var(--very-pale-blue);
+  padding: 1rem;
+  border-radius: .5rem;
+  margin: 1.5rem 0 1.5rem 0;
+}
+
+.annual-plan img {
+  flex: 0 0 20%;
+}
+
+.info {
+  flex: 0 0 42%;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.title {
+  font-weight: 900;
+  color: var(--dark-blue);
+}
+
+.price {
+  color: var(--desaturated-blue);
+}
+
+.change-plan {
+  color: var(--bright-blue);
+  font-size: 0.75rem;
+  font-weight: 900;
+  margin-left: auto;
+}
+
+.change-plan:hover,
+.change-plan:focus {
+  color: var(--hover-blue);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn {
+  display: block;
+  margin: 0.5em auto;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  border: none;
+  padding: 1.2em;
+  width: 100%;
+  border-radius: .6rem;
+  transition: all 250ms ease-in-out;
+}
+
+.proceed {
+  color: var(--white);
+  background-color: var(--bright-blue);
+  box-shadow: hsl(244deg 93% 91%) 0px 20px 16px -6px,
+  rgb(255 255 255 / 80%) -6px -2px 16px 0px;;
+}
+
+.proceed:hover,
+.proceed:focus {
+  background: var(--hover-blue);
+  cursor: pointer;
+}
+
+.cancel {
+  color: var(--desaturated-blue);
+  background-color: transparent;
+}
+
+.cancel:hover,
+.cancel:focus {
+  color: var(--dark-blue);
+  cursor: pointer;
+}
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
-
