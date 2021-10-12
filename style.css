@@ -12,6 +12,7 @@
   --dark-blue: hsl(223, 47%, 23%);
 
   --hover-blue: hsl(245, 65%, 65%);
+  --attr-blue: hsl(228, 45%, 44%);
 }
 
 * {
@@ -22,23 +23,11 @@
 
 body {
   font-family: "Red Hat Display", sans-serif;
-  font-size: 10px;
+  font-size: 1rem;
   overflow-x: hidden;
   background-repeat: no-repeat;
   background-size: 100%;
   background-color: var(--pale-blue);
-}
-
-@media (min-width: 400px) {
-  body {
-    background-image: url(images/pattern-background-desktop.svg);
-  }
-}
-
-@media (max-width: 400px) {
-  body {
-    background-image: url(images/pattern-background-mobile.svg);
-  }
 }
 
 main {
@@ -55,6 +44,8 @@ main {
   border-radius: 1rem;
   max-width: 85%;
   width: 400px;
+  box-shadow: 0px 10.5px 37.1px rgba(40, 7, 92, 0.084),
+    0px 84px 296px rgba(40, 7, 92, 0.13);
 }
 
 .header img{
@@ -68,20 +59,21 @@ main {
 .content, .footer {
   display: flex;
   flex-direction: column;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
 }
 
 h1 {
+  font-size: 1.5rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
   text-align: center;
 }
 
 p {
-  font-size: 1rem;
   font-weight: 500;
   color: var(--desaturated-blue);
   text-align: center;
+  line-height: 1.5rem;
 }
 
 .annual-plan {
@@ -166,4 +158,21 @@ p {
 }
 
 .attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution a { color: var(--attr-blue); }
+
+.attribution a:hover,
+.attribution a:focus {
+  color: var(--hover-blue);
+}
+
+@media (min-width: 400px) {
+  body {
+    background-image: url(images/pattern-background-desktop.svg);
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    background-image: url(images/pattern-background-mobile.svg);
+  }
+}
